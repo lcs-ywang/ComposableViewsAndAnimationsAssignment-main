@@ -45,9 +45,9 @@ struct CustomComposableDescriptionView: View {
                 
             }
             
-            NavigationLink(destination: CustomComposableView()) {
-                SimpleListItemView(title: "Completion Age",
-                                   caption: "Will illustrate fill to \(String(format: "%.0f", precentage))%")
+            NavigationLink(destination: CustomComposableView(fillToValue: precentage)) {
+                SimpleListItemView(title: "Age Right Now",
+                                   caption: "You are \(String(format: "%.0f", precentage))years old")
                 
             }
             .padding()
