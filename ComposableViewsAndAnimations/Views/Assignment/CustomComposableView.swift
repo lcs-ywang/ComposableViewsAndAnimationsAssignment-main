@@ -32,9 +32,14 @@ struct CustomComposableView: View {
         VStack{
             Text("We do not know the true value of our moments until they have undergone the test of memory.")
                 .font(Font.custom("AmericanTypeWriter", size: 18.0))
-                .padding(.top)
+                .padding([.top, .leading, .trailing])
+                .accentColor(.blue)
+                       
+            
+            
                 Spacer()
             ZStack{
+                
                 Circle()
                     // Traces, or makes a trim, for the outline of a shape
                     // 0 is no trim, 1 is trim around the entire outline of the shape
@@ -56,6 +61,9 @@ struct CustomComposableView: View {
                 Text("\(String(format: "%3.0f", (completionAmount) * 100.0))%")
                     .font(Font.custom("Courier-Bold", size: 24.0))
                     .animation(.linear(duration: 0.06))
+                    .foregroundColor(.white)
+                        .background(LinearGradient(gradient: Gradient(colors: [.white, .red, .black]), startPoint: .leading, endPoint: .trailing))
+
             }
             Spacer()
             
@@ -70,3 +78,4 @@ struct CustomComposableView_Previews: PreviewProvider {
         CustomComposableView(fillToValue: 70)
     }
 }
+
